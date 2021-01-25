@@ -1,6 +1,6 @@
 <div ng-if="titleItem">
     <div>Selected: {{titleItem.title}}</div>
-    <div class="tags-list list">
+    <div class="tag-list list">
         <div ng-repeat="tag in titleItem.tags" class="tag-item item">
             <span>{{tag}}</span>
             <button ng-click="onTagRemove(tag)">&times;</button>
