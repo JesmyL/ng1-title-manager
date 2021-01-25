@@ -8,3 +8,60 @@ elements-view {
   padding: 10px;
   border-bottom: 1px solid @c-gray;
 }
+
+.styled-button {
+  box-sizing: border-box;
+  border: solid 2px @c-dark;
+  border-radius: 5px;
+  background-color: @c-white;
+  color: @c-dark;
+  margin: 24px;
+  width: calc(100% - 48px);
+  height: 40px;
+  font-size: 16px;
+
+  &:hover {
+    border-color: @c-gray;
+    background-color: @c-gray-light;
+  }
+}
+
+.item-line {
+  padding: 0 24px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: @c-gray-light;
+  }
+
+  .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .boxes {
+    display: inline-flex;
+    width: 72px;
+    margin-left: 12px;
+    
+    .box {
+      display: inline-block;
+      min-width: 20px;
+      min-height: 20px;
+      background-color: @c-gray;
+      vertical-align: middle;
+
+      &:first-child {
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &.middle-item-line {
+    display: flex;
+    justify-content: space-between;
+  }
+}

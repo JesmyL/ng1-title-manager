@@ -14,3 +14,18 @@ body {
 html, body {
   height: 100%;
 }
+
+
+.list {
+  > .item {
+    border-bottom: solid 1px @c-gray;
+
+    &:first-child {
+      border-top: solid 1px @c-gray;
+    }
+
+    &.selected {
+      background-color: @c-gray-light;
+    }
+  }
+}

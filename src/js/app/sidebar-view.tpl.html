@@ -1,1 +1,18 @@
-Sidebar
+<div ng-if="titleItem">
+    <div>Selected: {{titleItem.title}}</div>
+    <div class="tags-list list">
+        <div ng-repeat="tag in titleItem.tags" class="tag-item item">
+            <span>{{tag}}</span>
+            <button ng-click="onTagRemove(tag)">&times;</button>
+        </div>
+    </div>
+
+    <div>
+        <span>New tag:</span>
+        <input ng-model="viewData.newTagName"/>
+        <input type="button"
+               value="Add"
+               ng-click="onAddTag()"
+               ng-disabled="titleItem.tags.indexOf(newTagName) > -1" />
+    </div>
+</div>

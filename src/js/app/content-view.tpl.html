@@ -1,2 +1,30 @@
-<some-1></some-1>
-Content
+<some-1 title-list="titleList"></some-1>
+<div>
+    <span>Order:</span> 
+    <select ng-model="viewData.order" ng-change="onOrderSelect()">
+        <option value="title">Title</option>
+        <option value="date">Date</option>
+    </select>
+</div>
+<div>
+    <span>Only Date:</span>
+    <input type="checkbox" ng-model="viewData.onlyDate" />
+</div>
+<div>Search:
+    <input type="text" ng-model="viewData.searchTerm" />
+</div>
+
+<div class="title-list list">
+    <div ng-repeat="titleItem in filteredTitleList()"
+         class="title-item item {{viewData.selectedTitleItemId === titleItem.id ? 'selected' : ''}}"
+         ng-click="onTitleInputClick(titleItem)">
+        <div>Title: {{titleItem.title}}</div>
+        <div>Date: {{titleItem.date | date:viewData.onlyDate ? 'dd.MM.yyyy' : 'dd.MM.yyyy hh:mm'}}</div>
+    </div>
+</div>
+
+<div>
+    <span>New title</span>
+    <input ng-model="viewData.newTitleItemTitle"/>
+    <input type="button" value="Add" ng-click="addTitleItem()"/>
+</div>
